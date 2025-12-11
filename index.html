@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> CONFRATERNIZAÇÃO COFIN 15-12-2025 </title>
+    <title>CONFRATERNIZAÇÃO COFIN 15-12-2025</title>
     <style>
     /* --- ESTILOS PADRÃO (DESKTOP E TELAS GRANDES) --- */
     body {
@@ -32,7 +32,6 @@
         padding: 10px 20px;
         margin: 0 5px;
         box-shadow: none;
-        /* Garante que o texto fique em uma linha */
         white-space: nowrap; 
     }
     .time-unit span {
@@ -52,10 +51,11 @@
         font-weight: normal;
     }
     #evento-mensagem {
-        color: #00FF00;
+        color: #00FF00; /* Cor Neon Verde */
         text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
     }
 
+    /* --- MEDIA QUERY: ESTILOS ESPECÍFICOS PARA TELAS DE CELULAR --- */
     @media (max-width: 600px) {
         
         body {
@@ -65,6 +65,10 @@
         h1 {
             font-size: 1.5em; 
         }
+        h2 {
+             font-size: 1.1em;
+        }
+
         #countdown {
             flex-direction: column; 
             align-items: center;
@@ -87,35 +91,33 @@
         }
         
         .time-unit small {
-         
             font-size: 1em;
             font-weight: bold;
             color: #FFD700;
             margin-left: 15px; 
         }
         
-       
         #evento-mensagem {
             font-size: 1em !important;
         }
     }
-</style>
+    </style>
 </head>
 <body>
 
-    <h1>🚨 CONTAGEM REGRESSIVA PARA A CONFRATERNIZAÇÃO!!!! 🚨</h1>
-    <h2> NÃO SE ESQUEÇAM !!!!!!!</h2>
+    <h1>🚨 INICIANDO CONTAGEM... 🚨</h1>
+    <h2>CONFRATERNIZAÇÃO COFIN: 15 DE DEZEMBRO, 12:00H</h2>
 
     <div id="countdown">
-        </div>
+    </div>
 
     <p id="evento-mensagem" style="margin-top: 50px; font-size: 1.5em;"></p>
 
     <script>
-        // ---DEFINIÇÃO DA DATA DO EVENTO
+        // --- DEFINIÇÃO DA DATA DO EVENTO ---
+        // Data e hora: 15 de Dezembro de 2025 às 12:00:00
         const dataDoEvento = new Date("December 15, 2025 12:00:00").getTime();
 
-       
         const countdownElement = document.getElementById("countdown");
         const mensagemElement = document.getElementById("evento-mensagem");
         
@@ -124,18 +126,19 @@
             const agora = new Date().getTime();
             const distancia = dataDoEvento - agora;
 
-          
+            // Cálculos
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
+            // Formatação (adiciona zero à esquerda)
             const formatoDias = String(dias).padStart(2, '0');
             const formatoHoras = String(horas).padStart(2, '0');
             const formatoMinutos = String(minutos).padStart(2, '0');
             const formatoSegundos = String(segundos).padStart(2, '0');
 
-         
+            // Exibição formatada
             countdownElement.innerHTML = `
                 <span class="time-unit">
                     <span>${formatoDias}</span><small> DIAS </small> 
@@ -151,16 +154,14 @@
                 </span>
             `;
 
-          
+            // Fim da Contagem
             if (distancia < 0) {
                 clearInterval(x);
                 countdownElement.innerHTML = ''; 
-                mensagemElement.innerHTML = ">>> INÍCIO DO EVENTO CONFIRMADO <<<";
+                mensagemElement.innerHTML = ">>> STATUS: ONLINE | BEM-VINDOS À CONFRATERNIZAÇÃO COFIN <<<";
             }
         }, 1000);
     </script>
 
 </body>
-
 </html>
-
