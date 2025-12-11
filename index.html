@@ -5,61 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> CONFRATERNIZAÇÃO COFIN 15-12-2025 </title>
     <style>
-     
+    /* --- ESTILOS PADRÃO (DESKTOP E TELAS GRANDES) --- */
+    body {
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        background-color: #000000;
+        color: #FF8C00;
+        padding: 50px;
+        overflow-x: hidden; /* Evita rolagem horizontal */
+    }
+    h1, h2 {
+        color: #FF8C00;
+        text-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+    }
+    #countdown {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; 
+        margin-top: 50px;
+        font-size: 20px;
+        color: #FFD700; 
+    }
+    .time-unit {
+        background-color: transparent; 
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        box-shadow: none;
+        /* Garante que o texto fique em uma linha */
+        white-space: nowrap; 
+    }
+    .time-unit span {
+        /* Estilo dos Números Grandes */
+        display: inline;
+        font-size: 4em; 
+        font-weight: bold;
+        color: #FF4500;
+        text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+        line-height: 1;
+    }
+    .time-unit small {
+        display: inline;
+        font-size: 1em;
+        color: #FF8C00; 
+        margin-left: 5px; 
+        font-weight: normal;
+    }
+    #evento-mensagem {
+        color: #00FF00;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    }
+
+    @media (max-width: 600px) {
+        
         body {
-            font-family: 'Courier New', monospace; 
-            text-align: center;
-            background-color: #000000; 
-            color: #FF8C00; 
-            padding: 50px;
-            overflow: hidden;
+            padding: 20px 10px; 
         }
-        h1, h2 {
-            color: #FF8C00;
-            text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); /* Efeito de Brilho */
+        
+        h1 {
+            font-size: 1.5em; 
         }
         #countdown {
+            flex-direction: column; 
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .time-unit {
+            margin: 10px 0; 
+            padding: 15px 30px; 
+            border: 1px solid rgba(255, 140, 0, 0.2); 
+            width: 80%; 
+            max-width: 300px;
             display: flex;
             justify-content: center;
-            align-items: flex-end; 
-            margin-top: 50px;
-            font-size: 20px; /* Tamanho da fonte dos rótulos (Dias, Horas, etc.) */
-            color: #FFD700; 
+            align-items: center;
         }
-        .time-unit {
-            
-            background-color: transparent; 
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            box-shadow: none;
-        }
+        
         .time-unit span {
-            
-            display: inline;
-            font-size: 4em; 
-            font-weight: bold;
-            color: #FF4500; 
-            text-shadow: 0 0 10px rgba(255, 69, 0, 0.7); 
-            line-height: 1;
-        }
-        .time-unit small {
-           
-            display: inline;
-            font-size: 1em;
-            color: #FF8C00; 
-            margin-left: 5px; 
+            font-size: 3em;
         }
         
         .time-unit small {
-            display: none; 
+         
+            font-size: 1em;
+            font-weight: bold;
+            color: #FFD700;
+            margin-left: 15px; 
         }
-
+        
+       
         #evento-mensagem {
-            color: #00FF00; /* Verde Neon para a mensagem de término */
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            font-size: 1em !important;
         }
-    </style>
+    }
+</style>
 </head>
 <body>
 
@@ -123,3 +163,4 @@
 </body>
 
 </html>
+
